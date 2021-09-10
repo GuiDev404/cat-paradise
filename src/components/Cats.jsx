@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
-import Cat from './Cat'
+import React from 'react'
 import { useQuery } from 'react-query'
+import placeholder from '../placeholder.png'
 import { getAllCats } from '../services/cats.services'
+
+import Cat from './Cat'
 import Loading from './Loading'
 
 function getSum(acc, property) {
@@ -39,7 +41,7 @@ const Cats = () => {
       {data.map((cat, idx) => (
         <Cat
           key={`${cat.id}_${cat.name}`}
-          img={cat.image?.url}
+          img={cat.image?.url || placeholder}
           id={cat.id}
           life_span={cat.life_span}
           name={cat.name}

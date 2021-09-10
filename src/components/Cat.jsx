@@ -7,7 +7,7 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
   const { push } = useHistory();
 
   const redirect = ()=> push(`/${id}`);
-
+console.log(wikipedia_url);
   return  single 
   ? <div className="card mb-3 rounded-0 mx-auto my-5" style={{ maxWidth: '100vw' }}>
       <div className="row g-0">
@@ -51,9 +51,11 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
 
           </div>
           <div className='card-footer' style={{ zIndex: '300 !important' }}>
-            <a href={wikipedia_url} title={`${name} in Wikipedia`} className='btn btn-dark btn-sm rounded-0 me-1' target='_blank'  style={{ zIndex: '300 !important' }}> 
-              {Wikipedia}
-            </a>
+            {wikipedia_url &&
+              <a href={wikipedia_url} title={`${name} in Wikipedia`} className='btn btn-dark btn-sm rounded-0 me-1' target='_blank'  style={{ zIndex: '300 !important' }}> 
+                {Wikipedia}
+              </a>
+            }
           </div>
         </div>
       </div>
@@ -70,9 +72,11 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
 
       </div>
       <div className='card-footer' style={{ zIndex: '300 !important' }}>
-        <a href={wikipedia_url} title={`${name} in Wikipedia`} className='btn btn-dark btn-sm rounded-0 me-1' target='_blank'  style={{ zIndex: '300 !important' }}> 
-          {Wikipedia}
-        </a>
+        {wikipedia_url &&
+          <a href={wikipedia_url} title={`${name} in Wikipedia`} className='btn btn-dark btn-sm rounded-0 me-1' target='_blank'  style={{ zIndex: '300 !important' }}> 
+            {Wikipedia}
+          </a>
+        }
       </div>
     </div>
   )
