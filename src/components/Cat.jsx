@@ -59,7 +59,7 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
       </div>
     </div>
   : (
-    <div id={id} className="card rounded-0 m-2 text-dark text-decoration-none" style={{ width: 'calc(45% + 100px)', cursor: 'pointer' }} onClick={redirect}>
+    <div id={id} className="card rounded-0 m-2 text-dark text-decoration-none col-md-6" style={{ cursor: 'pointer' }} onClick={redirect}>
       <img src={img} className="card-img-top rounded-0" alt={name} loading='lazy' />
       <div className="card-body">
         <h3 className="card-title serif mb-1">{name} </h3>
