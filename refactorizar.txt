@@ -1,0 +1,3 @@
+- crear una copia o una rama
+- y hacer un refactor con props drilling
+- hacer basicamente una peticion en app y ahi calcular y pasar los datos por props
