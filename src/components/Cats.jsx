@@ -1,25 +1,14 @@
 import React from 'react'
 import { useQuery } from 'react-query'
+import { getSum, sanitazeResult } from '../helpers'
 import placeholder from '../placeholder.png'
 import { getAllCats } from '../services/cats.services'
 
 import Cat from './Cat'
 import Loading from './Loading'
 
-function getSum(acc, property) {
-  const [ n1,n2 ] = property.split('-').map(str=> parseInt(str,10));
-  const averageCatLife = (n1 + n2) / 2;
-
-  acc += averageCatLife;
-  return acc;
-}
-
-function sanitazeResult(result) {
-  return result.toFixed(2);
-}
-
 const Cats = () => {
-  const { isLoading, isError, isFetching, data, error } = useQuery('cats', getAllCats, { 
+  const { isLoading, isError, isFetching, data } = useQuery('cats', getAllCats, { 
     staleTime: Infinity
   })
 
@@ -38,7 +27,7 @@ const Cats = () => {
   
   return (
     <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
-      {data.map((cat, idx) => (
+      {data.map((cat) => (
         <Cat
           key={`${cat.id}_${cat.name}`}
           img={cat.image?.url || placeholder}

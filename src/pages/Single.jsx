@@ -14,9 +14,9 @@ import { getCatBySearch } from '../services/cats.services';
 const Single = () => {
   const { id: catID } = useParams();
   const queryClient = useQueryClient();
-  const oldCategories = queryClient.getQueryData('cats') || [];
+  const oldCats = queryClient.getQueryData('cats') || [];
 
-  const cat = oldCategories.find(cat=> cat.id === catID);
+  const cat = oldCats.find(cat=> cat.id === catID);
 
   const { data: catByID, isLoading } = useQuery(['cat', catID], () => getCatBySearch(catID) , {
     enabled: !Boolean(cat),

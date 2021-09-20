@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/:id" component={Single} />
-          <Route path='/' component={()=> <Home />} />
+          <Route path='/' component={Home} />
         </Switch>
       </Router>
     </QueryClientProvider>

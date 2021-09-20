@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Emoji = ({ emoji }) => {
-  return  <span role="img" aria-label="sheep">{emoji}</span>
+const Emoji = ({ description, emoji }) => {
+  return  <span role="img" aria-label={description} >{emoji}</span>
 }
 
 export default Emoji

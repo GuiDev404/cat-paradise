@@ -1,7 +1,6 @@
 import React from 'react'
 import Emoji from './Emoji'
 
-
 const Header = ({ title, subtitle }) => {
   const averages = JSON.parse(window.localStorage.getItem('averages'));
 
@@ -10,7 +9,7 @@ const Header = ({ title, subtitle }) => {
       <h1 className='serif display-4'> 30 Days Of React </h1>
       <div className='d-flex mt-4 mb-5 me-3'>
         <p className='display-1 p-0 m-0'>
-          <Emoji emoji='🐈' />
+          <Emoji description='gato, cat' emoji='🐈' />
         </p>
         <div className='mt-3'>
           <h1 className='serif m-0 h1'> {title} </h1>
