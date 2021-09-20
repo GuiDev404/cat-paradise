@@ -2,7 +2,8 @@ const BASE_URL = 'https://api.thecatapi.com/v1';
 const ENDPOINTS = {
   all: `${BASE_URL}/breeds`,
   searchByBreedID: keyword => `${BASE_URL}/images/search?breed_id=${keyword}`,
-  cat: id => `${BASE_URL}/images/${id}`
+  cat: id => `${BASE_URL}/images/${id}`,
+  fact: 'https://catfact.ninja/fact'
 }
 
 function request(url) {
@@ -13,9 +14,11 @@ function request(url) {
 const getAllCats = ()=> request(ENDPOINTS.all);
 const getCatBySearch = (keyword)=> request(ENDPOINTS.searchByBreedID(keyword));
 const getCatByID = (id)=> request(ENDPOINTS.cat(id));
+const getFact = ()=> request(ENDPOINTS.fact);
 
 export {
   getAllCats,
   getCatBySearch,
-  getCatByID
+  getCatByID,
+  getFact
 }

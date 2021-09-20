@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Emoji = ({ emoji }) => {
-  return  <span role="img" aria-label="sheep">{emoji}</span>
+function Emoji ({ description, emoji }) {
+  return <span role='img' aria-label={description}> {emoji} </span>
 }
 
-export default Emoji
+export default React.memo(Emoji);

@@ -8,7 +8,7 @@ import Cat from '../components/Cat'
 import Loading from '../components/Loading';
 import placeholder from '../placeholder.png'
 
-const Single = ({ data }) => {
+const Single = ({ data, FactLoading }) => {
   const { id: catID } = useParams();
   const cat = data.find(cat=> cat.id === catID);
 

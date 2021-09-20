@@ -10,11 +10,11 @@ import { getAllCats } from './services/cats.services'
 import { getSum, sanitazeResult } from './helpers'
 
 function App() {
-  const { isLoading, isError, isFetching, data, error } = useQuery('cats', getAllCats, { 
+  const { isLoading, isError, data } = useQuery('cats', getAllCats, { 
     staleTime: Infinity
   })
 
-  if(isLoading || isFetching) return <Loading />
+  if(isLoading) return <Loading />
 
   if(isError) return <div className='text-danger my-4 lead text-center'> Algo salio mal... </div>
 

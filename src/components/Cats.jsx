@@ -6,7 +6,7 @@ const Cats = ({ data }) => {
 
   return (
     <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
-      {data.map((cat, idx) => (
+      {data.map(cat => (
         <Cat
           key={`${cat.id}_${cat.name}`}
           img={cat.image?.url || placeholder}

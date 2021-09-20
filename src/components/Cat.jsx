@@ -8,11 +8,11 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
 
   const redirect = ()=> push(`/${id}`);
 
-  return  single 
+  return single 
   ? <div className="card mb-3 rounded-0 mx-auto my-5" style={{ maxWidth: '100vw' }}>
       <div className="row g-0">
         <div className="col-md-5">
-          <img src={img} className="img-fluid" alt={name} />
+          <img src={img} className="covered-img" alt={name} />
         </div>
         <div className="col-md-7">
           <div className="card-body">
@@ -27,7 +27,7 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
               <div className="col-md-6">
 
                 <div className='mb-0 pb-0'>
-                  <p className='me-2 my-0 p-0 '> <Emoji emoji='⚖️' /> Weight </p>
+                  <p className='me-2 my-0 p-0 '> <Emoji description='balanza' emoji='⚖️' /> Weight </p>
                   <small className=''> {weight} Kg </small>
                 </div> 
 
@@ -35,14 +35,14 @@ const Cat = ({ single ,img, id ,life_span, name, origin, temperament, wikipedia_
               <div className="col-md-6">
 
                 <div className='mb-0 pb-0'>
-                  <p className='me-2 my-0 p-0 '> <Emoji emoji='⏳' /> Life Span </p>
+                  <p className='me-2 my-0 p-0 '> <Emoji description='time tiempo' emoji='⏳' /> Life Span </p>
                   <small className=''> {life_span} years </small>
                 </div>
 
               </div>
 
               <div className='mt-3'>
-                <p className='me-2 my-0 p-0'>  <Emoji emoji='😾' /> Temperament  </p>
+                <p className='me-2 my-0 p-0'>  <Emoji description='cat gato' emoji='😾' /> Temperament  </p>
                 {temperament.split(',').map(item=>
                   <span key={item} className="badge bg-light text-dark shadow-sm me-1 rounded-0 pb-0 mb-0"> {item} </span>
                 )}
